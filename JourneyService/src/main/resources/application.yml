@@ -1,0 +1,29 @@
+spring:
+  kafka:
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      valueSerializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring:
+          json:
+            trusted:
+              packages: com.daria.learn.*,java.util,java.lang
+
+
+kafka:
+  applicationId: 'kafka-streams-application'
+  bootstrapServersConfig: 'localhost:9092'
+  schemaRegistryUrlConfig: 'http://localhost:8081'
+
+topic:
+  locationHeartbeat: 'location-heartbeat'
+  suspiciousActivity: 'suspicious-activity'
+  startJourney: 'start-journey'
+  endJourney: 'end-journey'
+
+logging:
+  level:
+    org.apache.kafka: info

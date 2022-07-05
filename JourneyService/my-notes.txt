@@ -1,0 +1,8 @@
+1. to run docker-compose, bitnami/kafka has to have permissions to the folder in modules.
+    fixed by chmod -R 755 /path/to/my/folder
+
+
+2. If doesn't start correctly try to clean volume folder:
+    - rm -rf /data/journeytracker/kafka-persistence/
+    - mkdir /data/journeytracker/kafka-persistence
+    - chmod -R 777 /data/journeytracker/kafka-persistence/
